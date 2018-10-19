@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="parth_parikh">
+		<meta name="description" content="search_engine">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+		<title>Engine</title>
+	</head>
+
+	<body>
+		<header><h1>Engine</h1></header>
+	<div class="layout">
+		<main>
+			{% for link in name %}
+				<a href="{{link|e}}" target="_blank">{{ link[30:]|e|replace("_"," ") }}</a>
+				<br>
+			{% endfor %}
+
+
+			{% if instead %}
+				<p class="instead"> Did You Mean: </p>
+				<a href="{{instead}}">{{ instead }}</a>
+				<br>
+			{% endif %}
+
+			{% if error %}
+				<a>{{ error }}</a>
+				<br>
+			{% endif %}
+			
+			<br>
+			{% if name or error or instead %}
+			<p class='time'> About </p>
+			<a class='time'>{{timming}}</a>
+			<p class="time">seconds</p>
+			<br>
+			{% endif %}
+
+			<form method="post" autocomplete="off">
+				<div class="query">
+					<label for="query"></label>
+					<input type="text" id="query" name="query">
+				</div>
+
+				<div class="query-request">
+					<br>
+					<button type="submit">Search</button>
+				</div>
+			</form>	
+		</main>
+		<footer>
+			<p class="license">© 2018 Parth Parikh. Layout is available under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
+		</footer>
+
+	</div>
+	</body>
+</html>

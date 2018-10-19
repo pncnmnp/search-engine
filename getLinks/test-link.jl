@@ -1,0 +1,9 @@
+https://en.wikipedia.org/wiki/J._K._Rowling
+https://en.wikipedia.org/wiki/Magician_(fantasy)
+https://en.wikipedia.org/wiki/Harry_Potter_(character)
+https://en.wikipedia.org/wiki/Hermione_Granger
+https://en.wikipedia.org/wiki/Ron_Weasley
+https://en.wikipedia.org/wiki/Hogwarts_School_of_Witchcraft_and_Wizardry
+https://en.wikipedia.org/wiki/Lord_Voldemort
+https://en.wikipedia.org/wiki/Ministry_of_Magic
+https://en.wikipedia.org/wiki/Muggle
