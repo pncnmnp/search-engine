@@ -7,6 +7,7 @@ This project is primarily in Python. It mentions 'Julia' in github code % as I h
 To install scrapy and flask use:
 
 `pip3 install scrapy`
+
 `pip3 install flask`
 
 I am using nltk library for Lemming.
@@ -37,6 +38,7 @@ Now you can run a flask server inside **website/** dir.
 To run a flask server use:
 
 `export FLASK_APP=webQuery.py`
+
 `flask run`
 
 Just open the following link in a webbrowser to run the search-engine:
