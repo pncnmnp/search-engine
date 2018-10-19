@@ -44,8 +44,3 @@ To run a flask server use:
 Just open the following link in a webbrowser to run the search-engine:
 
 `http://127.0.0.1:5000/`
-
-## Screenshots
-![alt-text](engine.png)
-![alt-text](engine2.png)
-![alt-text](engine3.png)
