@@ -40,6 +40,8 @@ class Indexing:
 		for word in self.toRefine:
 			self.invertedIndex.setdefault(word, {})
 
+			# Finding the frequency of each word with the corresponding link
+			# Storing in a nested dictionary
 			if link not in self.invertedIndex[word]:
 				(self.invertedIndex[word])[link] = 1
 			elif link in self.invertedIndex[word]:
@@ -65,9 +67,12 @@ class Scraping(scrapy.Spider):
 	indexing.getLinks()
 	start_urls = indexing.links
 
+	# This is required for spider_closed to work
 	def __init__(self):
 		dispatcher.connect(self.spider_closed, signals.spider_closed)
 
+	# This is only suitable for wikipedia links
+	# Do change the tags for appropriate scraping
 	def parse(self, response):
 		for div in response.css('div.mw-parser-output'):
 			for text in div.css('p ::text'):
@@ -75,5 +80,6 @@ class Scraping(scrapy.Spider):
 				refining = re.compile('\w+').findall(refining);
 				self.indexing.refineWords(response.url, refining)
 
+	# Gets computed after all the scraping has been done
 	def spider_closed(self, spider):
 		self.indexing.makeCSV()

@@ -1,5 +1,12 @@
 from time import time
 
+# I could never integrate this code into my main project!
+# I realized I could just implement auto complete using html and css
+# I had a blast solving this using tries
+
+# The code only works for alphabets.
+# The trie node here is defined of length 26
+
 class TrieNode:
 	def __init__(self):
 		self.children = [None]*26

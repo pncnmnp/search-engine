@@ -60,6 +60,7 @@ def spellChecker(words, searchQuery):
 				# exit(0)
 
 def main(searchQuery):
+	# Try changing this to google.txt or some text file of your choice for optimized results
 	filename = './DataFiles/harrypotter.txt'
 	words = []
 	getWords(filename, words)

@@ -12,6 +12,8 @@ class Retrival:
 		self.originalQuery = ''
 		self.stopWords = []
 		self.links = {}
+		# variables exist for historical purpose
+		# This is what happens at 4 in the morning !!
 		self.flink = [] # final links
 		self.dym = [] # Did You Mean
 
@@ -39,6 +41,13 @@ class Retrival:
 		os.chdir('../')
 		csv_file = csv.reader(open('./getLinks/data.csv', 'r'), delimiter=",")
 		
+		# RANKING is not optimized.
+		# I have tried tf-idf but have failed to implement it successfully
+		# Below is a tf (term-frequency) only approach ( Not completely efficient )
+
+
+		# The code in the comments below is me trying to prioritize links which fit the searchWords
+
 		# mergeLinks = [[] for i in range(len(self.searchList))]
 		# unionLinks = []
 
@@ -62,11 +71,18 @@ class Retrival:
 
 	def results(self):
 		links = sorted(self.links.items(), key=lambda kv: kv[1])[::-1]
+
+		# You can increase the search results here
+		# I tested this code by scraping some 1000 pages due to bandwith limitation
+		# From my tests, first 5-7 results are usually relevant
+
 		links_upto = 10
 		current_link_no = 0
 		if links == []:
 			print('No Results Found')
 			for word in self.searchList:
+				# This goes into Did You Mean Zone
+				# To provide manual correction option to user!
 				self.dym.append(didYouMean.main(word))
 			return
 
