@@ -43,4 +43,4 @@ Just open the following link in a webbrowser to run the search-engine:
 
 `http://127.0.0.1:5000/`
 
-#####This project is primarily in Python. It mentions 'Julia' in github code % as I have used .jl extension as an output file for scrapy.#####
+### This project is primarily in Python. It mentions 'Julia' in github code % as I have used .jl extension as an output file for scrapy.
